@@ -1,6 +1,5 @@
 package example.LionTest;
 
-import com.example.Animal;
 import com.example.Feline;
 import com.example.Lion;
 import org.junit.Test;
@@ -19,9 +18,7 @@ public class LionTest {
 
     @Mock
     Feline feline;
-    Animal animal;
-
-
+  
     @Test
     public void isLionHaveMaleSexTrue() throws Exception {
         Lion lion = new Lion("Самец", feline);
