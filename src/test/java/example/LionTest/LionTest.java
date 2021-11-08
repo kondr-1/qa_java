@@ -1,5 +1,6 @@
 package example.LionTest;
 
+import com.example.Animal;
 import com.example.Feline;
 import com.example.Lion;
 import org.junit.Test;
@@ -17,7 +18,9 @@ import static org.junit.Assert.*;
 public class LionTest {
 
     @Mock
-    private Feline feline;
+    Feline feline;
+    Animal animal;
+
 
     @Test
     public void isLionHaveMaleSexTrue() throws Exception {
@@ -47,7 +50,7 @@ public class LionTest {
     @Test
     public void getLionEatMeat() throws Exception {
         Lion lion = new Lion("Самец", feline);
-        Mockito.when(lion.getFood()).thenReturn(Arrays.asList("Животные", "Птицы", "Рыба"));
+        Mockito.when(feline.getFood("Хищник")).thenReturn(Arrays.asList("Животные", "Птицы", "Рыба"));
         List<String> expected = Arrays.asList("Животные", "Птицы", "Рыба");
         assertEquals(expected, lion.getFood());
     }
